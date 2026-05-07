@@ -2,6 +2,172 @@
   "version": 1,
   "key": "sugarTuck",
   "name": "Sugar Tuck",
+  "roles": {
+    "leader": {
+      "steps": [
+        {
+          "beat": "1",
+          "foot": "L",
+          "x": 46,
+          "y": 68.8,
+          "angle": -8,
+          "note": "Placeholder: edit this step in Editor mode."
+        },
+        {
+          "beat": "2",
+          "foot": "R",
+          "x": 54.1,
+          "y": 72.1,
+          "angle": 8,
+          "note": "Placeholder: edit this step in Editor mode."
+        },
+        {
+          "beat": "3",
+          "foot": "L",
+          "x": 46.1,
+          "y": 83.2,
+          "angle": 0,
+          "note": ""
+        },
+        {
+          "beat": "&",
+          "foot": "R",
+          "x": 54.4,
+          "y": 72,
+          "angle": 0,
+          "note": ""
+        },
+        {
+          "beat": "4",
+          "foot": "L",
+          "x": 46.1,
+          "y": 52.9,
+          "angle": 0,
+          "note": ""
+        },
+        {
+          "beat": "5",
+          "foot": "R",
+          "x": 54.4,
+          "y": 58,
+          "angle": 0,
+          "note": ""
+        },
+        {
+          "beat": "&",
+          "foot": "L",
+          "x": 46,
+          "y": 53,
+          "angle": 0,
+          "note": ""
+        },
+        {
+          "beat": "6",
+          "foot": "R",
+          "x": 55,
+          "y": 57.8,
+          "angle": 30,
+          "note": ""
+        }
+      ],
+      "startSteps": [
+        {
+          "foot": "L",
+          "x": 45.9,
+          "y": 53.5,
+          "angle": -15
+        },
+        {
+          "foot": "R",
+          "x": 54.9,
+          "y": 57.8,
+          "angle": 30
+        }
+      ]
+    },
+    "follower": {
+      "steps": [
+        {
+          "beat": "1",
+          "foot": "R",
+          "x": 54,
+          "y": 20,
+          "angle": 8,
+          "note": "Placeholder: edit this step in Editor mode."
+        },
+        {
+          "beat": "2",
+          "foot": "L",
+          "x": 46,
+          "y": 31,
+          "angle": -8,
+          "note": "Placeholder: edit this step in Editor mode."
+        },
+        {
+          "beat": "3",
+          "foot": "R",
+          "x": 47,
+          "y": 47,
+          "angle": 0,
+          "note": ""
+        },
+        {
+          "beat": "&",
+          "foot": "L",
+          "x": 53,
+          "y": 61.5,
+          "angle": 0,
+          "note": ""
+        },
+        {
+          "beat": "4",
+          "foot": "R",
+          "x": 47,
+          "y": 76,
+          "angle": 0,
+          "note": ""
+        },
+        {
+          "beat": "5",
+          "foot": "L",
+          "x": 53,
+          "y": 59.4,
+          "angle": 0,
+          "note": ""
+        },
+        {
+          "beat": "&",
+          "foot": "R",
+          "x": 47,
+          "y": 67.7,
+          "angle": 0,
+          "note": ""
+        },
+        {
+          "beat": "6",
+          "foot": "L",
+          "x": 53,
+          "y": 76,
+          "angle": 0,
+          "note": ""
+        }
+      ],
+      "startSteps": [
+        {
+          "foot": "L",
+          "x": 48,
+          "y": 34,
+          "angle": -15
+        },
+        {
+          "foot": "R",
+          "x": 52,
+          "y": 34,
+          "angle": 30
+        }
+      ]
+    }
+  },
   "rhythm": [
     {
       "type": "step"
@@ -15,139 +181,5 @@
     {
       "type": "triple"
     }
-  ],
-  "roles": {
-    "leader": {
-      "steps": [
-        {
-          "beat": 1,
-          "foot": "L",
-          "x": 46,
-          "y": 82,
-          "angle": -8,
-          "note": "Placeholder: edit this step in Editor mode."
-        },
-        {
-          "beat": 2,
-          "foot": "R",
-          "x": 54,
-          "y": 70,
-          "angle": 8,
-          "note": "Placeholder: edit this step in Editor mode."
-        },
-        {
-          "beat": 3,
-          "foot": "L",
-          "x": 45,
-          "y": 58,
-          "angle": -18,
-          "note": "Placeholder: edit this step in Editor mode."
-        },
-        {
-          "beat": 4,
-          "foot": "R",
-          "x": 55,
-          "y": 56,
-          "angle": 16,
-          "note": "Placeholder: edit this step in Editor mode."
-        },
-        {
-          "beat": 5,
-          "foot": "L",
-          "x": 46,
-          "y": 72,
-          "angle": -8,
-          "note": "Placeholder: edit this step in Editor mode."
-        },
-        {
-          "beat": 6,
-          "foot": "R",
-          "x": 54,
-          "y": 76,
-          "angle": 8,
-          "note": "Placeholder: edit this step in Editor mode."
-        }
-      ],
-      "startSteps": [
-        {
-          "foot": "L",
-          "x": 48,
-          "y": 66,
-          "angle": -15
-        },
-        {
-          "foot": "R",
-          "x": 52,
-          "y": 66,
-          "angle": 30
-        }
-      ]
-    },
-    "follower": {
-      "steps": [
-        {
-          "beat": 1,
-          "foot": "R",
-          "x": 54,
-          "y": 20,
-          "angle": 8,
-          "note": "Placeholder: edit this step in Editor mode."
-        },
-        {
-          "beat": 2,
-          "foot": "L",
-          "x": 46,
-          "y": 31,
-          "angle": -8,
-          "note": "Placeholder: edit this step in Editor mode."
-        },
-        {
-          "beat": 3,
-          "foot": "R",
-          "x": 58,
-          "y": 43,
-          "angle": 24,
-          "note": "Placeholder: edit this step in Editor mode."
-        },
-        {
-          "beat": 4,
-          "foot": "L",
-          "x": 47,
-          "y": 51,
-          "angle": 42,
-          "note": "Placeholder: edit this step in Editor mode."
-        },
-        {
-          "beat": 5,
-          "foot": "R",
-          "x": 54,
-          "y": 31,
-          "angle": 8,
-          "note": "Placeholder: edit this step in Editor mode."
-        },
-        {
-          "beat": 6,
-          "foot": "L",
-          "x": 46,
-          "y": 25,
-          "angle": -8,
-          "note": "Placeholder: edit this step in Editor mode."
-        }
-      ],
-      "startSteps": [
-        {
-          "foot": "L",
-          "x": 48,
-          "y": 34,
-          "angle": -15
-        },
-        {
-          "foot": "R",
-          "x": 52,
-          "y": 34,
-          "angle": 30
-        }
-      ]
-    }
-  }
+  ]
 }
