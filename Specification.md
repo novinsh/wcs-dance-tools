@@ -25,6 +25,8 @@ Data Model
 
 - `footworks.config.json` is a manifest, not the full pattern database.
 - Each pattern lives in its own file under `patterns/`.
+- Manifest `version` is the release/cache-busting version for default pattern data.
+- When default pattern JSON changes, increment manifest `version`.
 - A pattern file must contain both `leader` and `follower` role data.
 - A pattern may contain additional metadata such as `version`, `key`, and `name`.
 - The app should remain backward compatible where practical with older config shapes.
@@ -116,6 +118,7 @@ Local Storage
 
 - Browser storage key: `wcs-footwork-config`.
 - Storage is scoped to the exact origin, such as `http://localhost:5173`.
+- Saved browser configs are used only when their `version` matches the loaded manifest version, so a new release can refresh stale default data.
 - Restarting the HTTP server does not clear local storage.
 - Changing port, hostname, browser profile, or private/incognito context changes storage behavior.
 

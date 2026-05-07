@@ -39,6 +39,8 @@ Pattern Data
 
 `footworks.config.json` is a manifest. Each entry points to one file in `patterns/`.
 
+When changing default pattern JSON for a release, increment `version` in `footworks.config.json`. The app revalidates the manifest and loads pattern files with that version as a cache-busting query string, so GitHub Pages and browser caches pick up fresh pattern data after release.
+
 Each pattern file contains:
 
 - pattern metadata, such as `key` and `name`

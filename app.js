@@ -50,7 +50,7 @@ initEditor();
 async function initEditor() {
   const defaults = await loadDefaultConfig();
   state.defaults = clone(defaults);
-  state.config = normalizeConfig(loadSavedConfig() ?? clone(defaults));
+  state.config = normalizeConfig(loadSavedConfig(defaults.version) ?? clone(defaults));
   state.defaults = normalizeConfig(state.defaults);
   state.savedConfig = clone(state.config);
   state.patternKey = Object.keys(state.config.patterns)[0];
@@ -61,17 +61,18 @@ async function initEditor() {
 }
 
 async function loadDefaultConfig() {
-  const response = await fetch(DEFAULT_CONFIG_URL);
+  const response = await fetch(DEFAULT_CONFIG_URL, { cache: "no-cache" });
   if (!response.ok) {
     throw new Error(`Could not load ${DEFAULT_CONFIG_URL}`);
   }
   const manifest = await response.json();
   if (!Array.isArray(manifest.patterns)) return manifest;
 
+  const releaseVersion = manifest.version ?? 1;
   const patterns = {};
   await Promise.all(
     manifest.patterns.map(async (entry) => {
-      const patternResponse = await fetch(entry.file);
+      const patternResponse = await fetch(withReleaseVersion(entry.file, releaseVersion));
       if (!patternResponse.ok) {
         throw new Error(`Could not load ${entry.file}`);
       }
@@ -87,17 +88,24 @@ async function loadDefaultConfig() {
   );
 
   return {
-    version: manifest.version ?? 1,
+    version: releaseVersion,
     patterns,
   };
 }
 
-function loadSavedConfig() {
+function withReleaseVersion(url, version) {
+  const separator = url.includes("?") ? "&" : "?";
+  return `${url}${separator}v=${encodeURIComponent(version)}`;
+}
+
+function loadSavedConfig(defaultVersion) {
   const raw = localStorage.getItem(STORAGE_KEY);
   if (!raw) return null;
 
   try {
-    return JSON.parse(raw);
+    const savedConfig = JSON.parse(raw);
+    if (savedConfig.version !== defaultVersion) return null;
+    return savedConfig;
   } catch {
     localStorage.removeItem(STORAGE_KEY);
     return null;
