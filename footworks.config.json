@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "patterns": [
+    {
+      "key": "sugarPush",
+      "name": "Sugar Push",
+      "file": "patterns/sugarpush.json"
+    },
+    {
+      "key": "sugarTuck",
+      "name": "Sugar Tuck",
+      "file": "patterns/sugartuck.json"
+    },
+    {
+      "key": "leftSidePass",
+      "name": "Left Side Pass",
+      "file": "patterns/leftsidepass.json"
+    },
+    {
+      "key": "rightSidePass",
+      "name": "Right Side Pass",
+      "file": "patterns/rightsidepass.json"
+    },
+    {
+      "key": "simpleWhip",
+      "name": "Simple Whip",
+      "file": "patterns/simplewhip.json"
+    }
+  ]
+}
