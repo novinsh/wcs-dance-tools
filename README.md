@@ -1,7 +1,7 @@
 West Coast Swing Footwork Tool
 ==============================
 
-A static web tool for drawing, editing, and displaying West Coast Swing footwork patterns. It is intended to help dancers learn foot placement, timing, and role-specific paths at home.
+A static [web tool](https://github.com/novinsh/wcs-dance-tools) for drawing, editing, and displaying West Coast Swing footwork patterns. It is intended to help dancers learn foot placement, timing, and role-specific paths at home.
 
 Quick Start
 -----------
