@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>West Coast Swing Footwork Editor</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="practice-panel" aria-label="West Coast Swing footwork tool">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">West Coast Swing</p>
+            <h1>Footwork Tool</h1>
+          </div>
+
+          <div class="segmented" aria-label="Mode">
+            <button class="segment active" type="button" data-mode="display">Display</button>
+            <button class="segment" type="button" data-mode="editor">Editor</button>
+          </div>
+        </header>
+
+        <section class="toolbar" aria-label="Footwork controls">
+          <label class="field">
+            <span>Pattern</span>
+            <select id="patternSelect"></select>
+          </label>
+          <button id="addPattern" class="secondary-button toolbar-button" type="button">Add pattern</button>
+
+          <div class="segmented" aria-label="Role">
+            <button class="segment active" type="button" data-role="leader">Leader</button>
+            <button class="segment" type="button" data-role="follower">Follower</button>
+          </div>
+
+          <label class="check-field">
+            <input id="edgeToggle" type="checkbox" checked />
+            <span>Show edges</span>
+          </label>
+
+          <label class="field compact toolbar-field">
+            <span>Lag</span>
+            <select id="lagSelect">
+              <option value="1">1</option>
+              <option value="2" selected>2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="all">All</option>
+            </select>
+          </label>
+
+          <div class="transport" aria-label="Step controls">
+            <button id="prevStep" class="icon-button" type="button" aria-label="Previous beat">‹</button>
+            <button id="playPause" class="primary-button" type="button">Play</button>
+            <button id="nextStep" class="icon-button" type="button" aria-label="Next beat">›</button>
+          </div>
+        </section>
+
+        <section id="beatStrip" class="beat-strip" aria-label="Current beat"></section>
+
+        <section class="workspace">
+          <section id="danceFloor" class="dance-floor" aria-label="Footwork canvas">
+            <div class="slot-line"></div>
+            <div class="slot-label start">Start / anchor</div>
+            <div class="slot-label finish">Travel</div>
+            <svg id="edgeLayer" class="edge-layer" aria-hidden="true"></svg>
+            <div id="stepsLayer" class="steps-layer"></div>
+          </section>
+
+          <aside class="editor-panel" aria-label="Editor">
+            <div>
+              <p class="panel-kicker">Selected step</p>
+              <h2 id="stepTitle">Sugar Push: beat 1</h2>
+              <p id="stepHint">Switch to Editor and click the floor or drag a footstep to redraw the pattern.</p>
+            </div>
+
+            <section class="rhythm-editor" aria-label="Rhythm editor">
+              <div>
+                <p class="panel-kicker">Step types</p>
+                <div id="rhythmList" class="rhythm-list"></div>
+              </div>
+              <div class="action-row">
+                <button id="addSingleStep" class="secondary-button" type="button">Insert step</button>
+                <button id="addTripleStep" class="secondary-button" type="button">Insert triple</button>
+              </div>
+            </section>
+
+            <div class="editor-grid">
+              <label class="field compact">
+                <span>Foot</span>
+                <select id="footSelect">
+                  <option value="L">Left</option>
+                  <option value="R">Right</option>
+                </select>
+              </label>
+
+              <label class="field compact">
+                <span>Angle</span>
+                <input id="angleInput" type="number" min="-180" max="180" step="5" />
+              </label>
+
+              <label class="field compact">
+                <span>X</span>
+                <input id="xInput" type="number" min="0" max="100" step="1" />
+              </label>
+
+              <label class="field compact">
+                <span>Y</span>
+                <input id="yInput" type="number" min="0" max="100" step="1" />
+              </label>
+            </div>
+
+            <label class="field">
+              <span>Note</span>
+              <textarea id="noteInput" rows="4"></textarea>
+            </label>
+
+            <div class="action-row">
+              <button id="savePattern" class="primary-button" type="button">Save</button>
+              <button id="resetPattern" class="secondary-button" type="button">Reset pattern</button>
+              <button id="exportConfig" class="secondary-button" type="button">Export pattern JSON</button>
+            </div>
+
+            <label class="file-button">
+              <input id="importConfig" type="file" accept="application/json,.json" />
+              Import JSON
+            </label>
+          </aside>
+        </section>
+      </section>
+    </main>
+
+    <dialog id="unsavedDialog" class="unsaved-dialog">
+      <form method="dialog">
+        <h2>Unsaved pattern changes</h2>
+        <p>Save your changes before switching patterns or creating a new one?</p>
+        <div class="action-row">
+          <button id="dialogSave" class="primary-button" value="save">Yes, save</button>
+          <button id="dialogDiscard" class="secondary-button" value="discard">No</button>
+          <button id="dialogCancel" class="secondary-button" value="cancel">Continue editing</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="app.js"></script>
+  </body>
+</html>
