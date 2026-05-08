@@ -42,11 +42,16 @@
     - [ ] put a voice on it that counts the steps in steps or numbers
 - [ ] make image exports that put the whole pattern in terms of static images side by side per each 2 beats, i.e. each side-by-side image contains two beats at a time so that things won't overlap.
 - [ ] add a view option that when toggled it would translate the patterns into the first person view coordinate system so the visualization view would move with the person (this would improve UX especially for patterns that the side changes, such as left side pass, whip, etc.) 
+- [ ] move display options to a place where it is hidden by default and only accessible
+- [ ] when in the edit mode, and start position is selected, highlight it and bring it on the top and make other steps opac.
+- [ ] get inspiration how to visualize the anchor step and counting steps and foot from [here](https://www.countrydancingtonight.com/wp-content/uploads/2023/01/wcs_cheetsheet-1-898x1024.png)
 
 ### editor specific
 - [ ] make it possible to edit the footwork for both leader and follower at the same time
 - [ ] for the footworks that are mirror of each other make it possible to adopt it from the existing follower/leader footwork and just mirror it.
 - [ ] add an option that allows rotating the view to any angle for easier editing
+- [ ] add a snapping feature that would allow positioning steps easier
+- [ ] add a mouse free editing mode, inspired by vim to add/remove/modify steps and navigate around the ui for ultimate-quick edit experience
 
 ### configuration files
 - [x] keep a separate file for each pattern.
@@ -57,6 +62,16 @@
 - [ ] under the numbers and foot labels L/R also articulate whether it is a step or a triple step. For triple step have it like this, 3: tri, &:ple, 4: step. Also, to make it even more, bundle steps and triple steps by drawing a highlighting contour around the step buttons on the top. Let this be activate by a checkbox options saying: "Read steps".
 - [x] mark the role on top of leader/follower toggle button
 - [x] use "pattern" terminology throughout the UI and code
+- [ ] add keyboard shortcuts that would make it easier to:
+    - [ ] insert steps (w for one step and ww for triple steps)
+    - [ ] rotate step (r)
+    - [ ] opening the ui guide/help (g)
+    - [ ] opening the display options (d)
+    - [ ] play/pause (i)
+    - [ ] previous or next (h for prev and l for next)
+    - [ ] add patter (a)
+
+
 
 ## miscellenous
 - [ ] add an option to walk through the user through the interface step by step
